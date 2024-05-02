@@ -8,8 +8,17 @@
 <body>
 <div>
     <th:block th:each="user : ${users}">
-        <h1 th:text="${user.toString()}"></h1>
+        <a  th:text="${user.getName()}">us</a>
+        <a  th:text="${user.getAge()}">us</a>
+        <a th:href="@{/id/edit(id=${user.getId()})}">ReadactionUser!</a>
+
+
+        <br/>
+
     </th:block>
 </div>
+<br/>
+<hr/>
+<a href="/new">Create new User</a>
 </body>
 </html>
