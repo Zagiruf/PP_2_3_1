@@ -24,20 +24,24 @@ public class UserDAOImpl implements UserDAO {
     public List<User> gelAllUsers() {
         return entityManager.createQuery("select u from User u", User.class).getResultList();
     }
+
     @Override
     public User show(int id) {
       return entityManager.find(User.class, id);
     }
+
     @Override
     public void saveUser(User user) {
         entityManager.persist(user);
     }
+
     @Override
     public void updateUser(User updatedUser, int id) {
-        User userToBeUpdated =  entityManager.find(User.class, id);
+        User userToBeUpdated = entityManager.find(User.class, id);
         userToBeUpdated.setName(updatedUser.getName());
         userToBeUpdated.setAge(updatedUser.getAge());
     }
+
     @Override
     public void deleteUser(int id) {
         entityManager.remove(entityManager.find(User.class,id));

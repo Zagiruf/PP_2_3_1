@@ -16,7 +16,6 @@
 
     <dependencies>
 
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
@@ -30,17 +29,11 @@
             <scope>provided</scope>
         </dependency>
 
-
         <dependency>
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf-spring5</artifactId>
             <version>3.0.14.RELEASE</version>
         </dependency>
-
-
-
-
-
 
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -59,9 +52,6 @@
             <artifactId>spring-orm</artifactId>
             <version>5.3.14</version>
         </dependency>
-
-
-
 
         <dependency>
             <groupId>org.apache.commons</groupId>

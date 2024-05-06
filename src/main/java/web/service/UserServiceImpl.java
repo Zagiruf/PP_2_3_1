@@ -22,6 +22,7 @@ public class UserServiceImpl implements UserService {
     public List<User> gelAllUsers() {
         return userDAO.gelAllUsers();
     }
+
     @Override
     @Transactional
     public User show(int id) {
@@ -32,11 +33,13 @@ public class UserServiceImpl implements UserService {
     public void saveUser(User user) {
         userDAO.saveUser(user);
     }
+
     @Override
     @Transactional
     public void updateUser(User updatedUser, int id) {
         userDAO.updateUser(updatedUser, id);
     }
+
     @Override
     @Transactional
     public void deleteUser(int id){

@@ -4,10 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import web.dao.UserDAO;
 import web.model.User;
 import web.service.UserService;
-
 import java.util.List;
 
 @Controller
@@ -28,7 +26,6 @@ public class UserController {
     public String show(@RequestParam ("id") int id, Model model) {
         model.addAttribute("user", userService.show(id));
         return "user";
-
     }
     @GetMapping("/new")
     public String newUser(@ModelAttribute("us") User user) {
@@ -37,16 +34,16 @@ public class UserController {
 
     @PostMapping()
     public String addNewUser(@ModelAttribute("us") User user) {
-          userService.saveUser(user);
+        userService.saveUser(user);
         return "redirect:/";
     }
     @GetMapping("/id/edit")
-    public String edit(@RequestParam ("id") int id, Model model) {
+    public String edit(@RequestParam("id") int id, Model model) {
         model.addAttribute("user",userService.show(id));
         return "edit";
     }
     @PatchMapping("/id")
-    public String update(@ModelAttribute("user") User user, @RequestParam ("id") int id) {
+    public String update(@ModelAttribute("user") User user, @RequestParam("id") int id) {
         userService.updateUser(user, id);
         return "redirect:/";
     }
@@ -56,12 +53,4 @@ public class UserController {
         userService.deleteUser(id);
         return "redirect:/";
     }
-
-
-
-//    @PostMapping()
-//    public String () {
-//        userService.updateUser();
-//    }
-
 }

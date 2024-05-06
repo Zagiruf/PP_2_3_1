@@ -20,7 +20,6 @@ public class User {
     }
 
     public User(String name, int age) {
-        this.id = id;
         this.name = name;
         this.age = age;
     }
